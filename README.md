@@ -24,10 +24,8 @@
 
 ### Semester Assignments
 
-- Link to Assignment 1: [**Assignment 1**](URL_TO_ASSIGNMENT_1) <!-- Replace with actual URL -->
-- Link to Assignment 2: [**Assignment 2**](URL_TO_ASSIGNMENT_2) <!-- Replace with actual URL -->
-- Link to Assignment 3: [**Assignment 3**](URL_TO_ASSIGNMENT_3) <!-- Replace with actual URL -->
-<!-- Add more assignments as necessary -->
+- Link to Assignment 1: [**Assignment 1**](/assignments/assignment1/assignment1.mkv) <!-- Replace with actual URL -->
+
 
 ## Project Requirements
 
