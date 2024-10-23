@@ -24,7 +24,7 @@
 
 ### Semester Assignments
 
-- Link to Assignment 1: [**Assignment 1**](/assignments/assignment1/assignment1.mkv) <!-- Replace with actual URL -->
+- Link to Assignment 1: [**Assignment 1**](/assignments/assignment1/) <!-- Replace with actual URL -->
 
 
 ## Project Requirements
