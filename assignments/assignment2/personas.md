@@ -120,6 +120,6 @@ Carlos has a clean-cut, professional look, often seen in a crisp button-down shi
 
 Emily has a warm, friendly appearance, often seen in casual, comfortable clothing suited for her DIY and gardening activities. She has medium-length dark hair with a few silver strands and a relaxed expression that shows her calm and nurturing personality.
 
-# ChatGPT prompts used
+## ChatGPT prompts used
 
 - "Create a set of user personas (3) relevant to a specific project, in this case creating a blogging platform. Include visual descriptions for your personas."

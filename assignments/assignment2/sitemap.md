@@ -53,6 +53,6 @@
 
 ![Sitemap](./assets/sitemap.png)
 
-# ChatGPT prompts used
+## ChatGPT prompts used
 
 - "Develop an information architecture for the project based on the card sorting method"
