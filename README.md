@@ -25,7 +25,7 @@
 ### Semester Assignments
 
 - Link to Assignment 1: [**Assignment 1**](/assignments/assignment1/)
-- Link to Assignment 2: [**Assignment 2**](/assignments/assignment2/assignment2.md)
+- Link to Assignment 2: [**Assignment 2**](/assignments/assignment2/)
 
 
 ## Project Requirements
