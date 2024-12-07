@@ -27,6 +27,7 @@
 - Link to Assignment 1: [**Assignment 1**](/assignments/assignment1/)
 - Link to Assignment 2: [**Assignment 2**](/assignments/assignment2/)
 - Link to Assignment 3: [**Assignment 3**](https://writewarp.vercel.app/)
+- Link to Assignment 4: [**Assignment 4**](/assignments/assignment4/fidelity_models.md)
 
 
 ## Project Requirements
