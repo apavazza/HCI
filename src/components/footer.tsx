@@ -1,13 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-type Page = {
-  title: string;
-  path: `/${string}`;
-};
-
 export function Footer() {
   return (
     <div className="w-full pt-3 bg-[#CCE6E2] text-gray-600">
