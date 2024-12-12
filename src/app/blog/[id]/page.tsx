@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BASE_API_URL } from "../page";
 import type { Post } from "../page";
 import { ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
@@ -13,7 +12,7 @@ type BlogPostProps = {
 };
 
 async function getPost(id: string): Promise<Post> {
-  const data = await fetch(`${BASE_API_URL}/posts/${id}`);
+  const data = await fetch(`${process.env.BASE_API_URL}/posts/${id}`);
   return data.json();
 }
 

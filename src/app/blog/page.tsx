@@ -26,7 +26,6 @@ export const metadata: Metadata = {
   title: "Blog",
 };
 
-export const BASE_API_URL = "https://jsonplaceholder.typicode.com";
 const PAGE_SIZE = 6;
 
 async function getPosts({
@@ -34,7 +33,7 @@ async function getPosts({
   _limit = PAGE_SIZE,
 }: PagingInfo): Promise<Post[]> {
   const data = await fetch(
-    `${BASE_API_URL}/posts/?_start=${_start}&_limit=${_limit}`
+    `${process.env.BASE_API_URL}/posts/?_start=${_start}&_limit=${_limit}`
   );
   return data.json();
 }
@@ -42,7 +41,7 @@ async function getPosts({
 // Get the total number of posts; please note this feature is API specific.
 async function getPostsCount(): Promise<number> {
   // https://jsonplaceholder.typicode.com/posts/?_start=5&_limit=8
-  const data = await fetch(`${BASE_API_URL}/posts/?_limit=1`, {
+  const data = await fetch(`${process.env.BASE_API_URL}/posts/?_limit=1`, {
     method: "HEAD",
   });
   let count: string | number = data.headers.get("x-total-count") || "1";
