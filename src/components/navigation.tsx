@@ -24,6 +24,10 @@ const pages: Page[] = [
     path: "/community",
   },
   {
+    title: "Blog",
+    path: "/blog",
+  },
+  {
     title: "Profile",
     path: "/profile",
   },
@@ -37,10 +41,10 @@ function processPage(page: Page, index: number, pathname: string) {
         className={
           page.path === "/"
             ? pathname === page.path
-              ? "font-extrabold"
+              ? "font-extrabold border-2 border-solid p-3 border-green-900"
               : ""
             : pathname.startsWith(page.path)
-            ? "font-extrabold"
+            ? "font-extrabold border-2 border-solid p-3 border-green-900"
             : ""
         }
       >
@@ -53,8 +57,12 @@ function processPage(page: Page, index: number, pathname: string) {
 export function Navigation() {
   const pathname = usePathname();
   return (
-    <ul className="flex justify-center space-x-4 mt-8">
-      {pages.map((page, index) => processPage(page, index, pathname))}
-    </ul>
+    <div className="flex justify-between border-b-2">
+      <span className="inline-block p-5">LOGO</span>
+      <ul className="inline-flex justify-center items-center space-x-4 mt-8 pb-3 pr-5">
+        {pages.map((page, index) => processPage(page, index, pathname))}
+      </ul>
+    </div>
+      
   );
 }
