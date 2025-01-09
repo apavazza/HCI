@@ -3,39 +3,21 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Logo from "@/components/logo";
+import Logo from "./logo";
 import { cn } from "@/lib/utils";
 import { useClickOutside } from "@/hooks/useClickOutside";
+import { TypeNavItem } from "@/content-types";
 
-type Page = {
-  title: string;
-  path: `/${string}`;
-};
-
-// We hardcode pages here, but you could get this information from some external source (e.g. CMS, DB, config file, etc).
-const pages: Page[] = [
-  { title: "Home", path: "/" },
-  {
-    title: "Explore",
-    path: "/explore",
-  },
-  {
-    title: "Write",
-    path: "/write",
-  },
-  {
-    title: "Community",
-    path: "/community",
-  },
-  {
-    title: "Blog",
-    path: "/blog",
-  },
-  {
-    title: "Profile",
-    path: "/profile",
-  },
-];
+// This is essentially the same as if we had written:
+//
+// type Page = {
+//   title: string;
+//   path: string;
+//   includeInProd?: boolean;
+// };
+//
+// The difference is that the type is generated from the Contentful schema.
+type Page = TypeNavItem<"WITHOUT_UNRESOLVABLE_LINKS">["fields"];
 
 function processPage(
   page: Page,
@@ -99,7 +81,11 @@ function Hamburger({ isOpen, toggleMenu }: HamburgerProps) {
   );
 }
 
-export function Navigation() {
+type NavigationProps = {
+  pages: Page[];
+};
+
+export function Navigation({ pages }: NavigationProps) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
@@ -110,17 +96,19 @@ export function Navigation() {
 
   return (
     <nav
-      className="py-8 border-b border-brand-stroke-weak sticky top-0 z-10 bg-brand-fill"
+      className="py-8 border-b border-brand-stroke-weak sticky top-0 z-20 bg-brand-fill"
       ref={navRef}
     >
       <div className="container flex justify-between items-center">
         <Link href="/" onClick={closeMenu}>
-          <Logo className="text-2xl ml-3" />
+          <Logo className="text-2xl" />
         </Link>
 
         {/* Hidden on mobile */}
-        <ul className="hidden md:flex justify-between space-x-1 text-sm uppercase text-brand-text-strong">
-          {pages.map((page, index) => processPage(page, index, pathname))}
+        <ul className="hidden md:flex justify-between space-x-4 text-sm uppercase text-brand-text-strong">
+          {pages
+            .filter((page) => page.includeInProd)
+            .map((page, index) => processPage(page, index, pathname))}
         </ul>
 
         {/* Visible on mobile */}
@@ -131,9 +119,11 @@ export function Navigation() {
             { hidden: !isMenuOpen }
           )}
         >
-          {pages.map((page, index) =>
-            processPage(page, index, pathname, closeMenu)
-          )}
+          {pages
+            .filter((page) => page.includeInProd)
+            .map((page, index) =>
+              processPage(page, index, pathname, closeMenu)
+            )}
         </ul>
       </div>
     </nav>
