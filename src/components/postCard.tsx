@@ -3,6 +3,7 @@
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 type PostBoxType = {
     title: string,
@@ -34,6 +35,16 @@ export default function PostCard({props}: PostBoxType){
             <p className="m-1 text-right">Author: <span className="italic">{props.author}</span></p>
             <h3 className="m-1 text-center text-xl">{props.title}</h3>
             <p className="m-1">{props.text}</p>
+            
+            <div
+              className="p-8 prose max-w-none prose-p:text-brand-text-strong prose-h1:text-brand-text-strong prose-h2:text-brand-text-strong"
+              dangerouslySetInnerHTML={{
+                __html: documentToHtmlString(
+                  props.postContent
+                ),
+              }}
+            />
+
         </div>
     );
 }
