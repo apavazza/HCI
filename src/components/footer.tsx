@@ -6,11 +6,19 @@ import Image from "next/image";
 export function Footer() {
   return (
     <div className="w-full pt-3 bg-[#CCE6E2] text-gray-600">
-      <div className="flex justify-around">
+      <div className="flex justify-evenly">
         <Link href={'/'}>
           <img src="/images/logo_light.png" alt="LOGO" className="w-32 h-7"/>
         </Link>
         <div className="w-1/2 flex justify-around">
+          <ul className="inline-block">
+          <li className="text-lg">Product</li>
+            <li><a href="">Website Templates</a></li>
+            <li><a href="">Website Builder</a></li>
+            <li><a href="">Website Design</a></li>
+            <li><a href="">Web Hosting</a></li>
+            <li><a href="">Website Accessibility</a></li>
+          </ul>
           <ul className="inline-block">
             <li className="text-lg">Sitemap</li>
             <li><a href="/">Home</a></li>
@@ -28,7 +36,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="w-full pt-5 text-center">2024 &copy; writewarp. All rights reserved.</div>
+      <div className="w-full pt-5 text-center">2024 - 2025 &copy; writewarp. All rights reserved.</div>
     </div>
   );
 }

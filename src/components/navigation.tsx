@@ -101,7 +101,7 @@ export function Navigation({ pages }: NavigationProps) {
     >
       <div className="container flex justify-between items-center">
         <Link href="/" onClick={closeMenu}>
-          <Logo className="text-2xl" />
+          <Logo className="ml-5 text-2xl" />
         </Link>
 
         {/* Hidden on mobile */}
