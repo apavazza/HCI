@@ -26,8 +26,8 @@ const ExplorePage = () => {
   return (
     <main className="flex min-h-screen flex-col items-center">
       {/* TRENDING */}
-      <div className="m-5 p-5 bg-green-200 w-11/12 rounded-lg border border-gray-200 shadow-md">
-        <h2>Trending</h2>
+      <div className="m-5 p-5 bg-[#ace2d1] w-11/12 rounded-lg border border-gray-200 shadow-md">
+        <h2>Explore New Posts</h2>
         <div className="flex justify-around flex-wrap">
           {/* Dynamically displaying fetched posts */}
           {posts.map((post, index) => (
@@ -37,29 +37,23 @@ const ExplorePage = () => {
         </div>
       </div>
 
-      <div className="m-5 flex justify-between flex-wrap w-11/12">
+      {/* <div className="m-5 flex justify-between flex-wrap w-11/12"> */}
         {/* EXPLORE */}
-        <div className="inline-block mx-auto p-3 bg-green-200 rounded-lg border border-gray-200 shadow-md">
+        {/* <div className="inline-block mx-auto p-3 bg-green-200 rounded-lg border border-gray-200 shadow-md">
           <h2>Explore</h2>
           <div className="flex justify-around flex-wrap">
-            {/* <PostBox title='Post 7' text='Sample text for post 7' />
-            <PostBox title='Post 8' text='Sample text for post 8' />
-            <PostBox title='Post 9' text='Sample text for post 9' />
-            <PostBox title='Post 10' text='Sample text for post 10' /> */}
+            
           </div>
-        </div>
+        </div> */}
 
         {/* RECENTLY PUBLISHED */}
-        <div className="inline-block mt-5 mx-auto p-3 bg-green-200 rounded-lg border border-gray-200 shadow-md">
+        {/* <div className="inline-block mt-5 mx-auto p-3 bg-green-200 rounded-lg border border-gray-200 shadow-md">
           <h2>Recently Published</h2>
           <div className="flex justify-around flex-wrap">
-            {/* <PostBox title='Post 11' text='Sample text for post 11' />
-            <PostBox title='Post 12' text='Sample text for post 12' />
-            <PostBox title='Post 13' text='Sample text for post 13' />
-            <PostBox title='Post 14' text='Sample text for post 14' /> */}
+            
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </main>
   );
 };

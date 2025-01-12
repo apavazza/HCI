@@ -20,7 +20,7 @@ export default function PostCard({props}: PostBoxType){
     return(
         <div className="mx-auto my-3 w-9/12 block p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 transition-colors duration-200">
             <Link
-                href="/"
+                href="/explore"
                 className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200 mb-6"
                 >
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back
