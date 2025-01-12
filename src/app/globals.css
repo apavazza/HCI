@@ -6,6 +6,10 @@
   /*--background: #ffffff;*/
   --background: #EBF2F4;
   --foreground: #171717;
+  --brand-primary: #427565;
+  --brand-fill: #EBF2F4;
+  --brand-stroke-weak: #f0f0f0;
+  --brand-black: #171717;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -10,7 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)"
+        foreground: "var(--foreground)",
+        'brand-primary': "var(--brand-primary)",
+        'brand-fill': "var(--brand-fill)",
+        'brand-stroke-weak': "var(--brand-stroke-weak)",
+        'brand-black': "var(--brand-black)"
       },
     },
   },

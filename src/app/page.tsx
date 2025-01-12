@@ -9,10 +9,10 @@ const Page = () => {
   return (
     <main className="flex min-h-screen flex-col items-center">
       {/* HERO SECTION */}
-      <div className="h-screen flex flex-wrap justify-around bg-green-200 w-full border border-gray-200 shadow-md">
+      <div className="h-screen flex flex-wrap justify-around bg-[#ace2d1] w-full border border-gray-200 shadow-md">
         <div className='flex flex-col justify-center'>
-          <h2 className="ml-7 pt-10 p-3">Human stories & ideas</h2>
-          <span className="ml-7 p-3">Unlock Your Voice With Professional Blogging Services</span>
+          <h2 className="ml-7 pt-10 p-3 text-3xl">Human stories & ideas</h2>
+          <span className="ml-7 p-3 text-xl">Unlock Your Voice With Professional Blogging Services</span>
           <span className="ml-10 block w-48 m-2 p-3 border bg-black text-white text-center hover:bg-green-800 active:bg-green-700">TRY IT FOR FREE</span>
         </div>
         <Image 
@@ -24,7 +24,7 @@ const Page = () => {
         />
       </div>
       {/* SECOND SECTION */}
-      <div className='h-screen w-full flex flex-wrap justify-around items-center bg-green-500 border border-gray-200 shadow-md'>
+      <div className='h-screen w-full flex flex-wrap justify-around items-center bg-[#EBF2F4] border border-gray-200 shadow-md'>
         <div className='flex flex-col justify-center'>
           <h3 className='p-10 text-2xl'>Build your blog your way</h3>
           <div>
@@ -43,7 +43,7 @@ const Page = () => {
       </div>
 
       {/* THIRD SECTION */}
-      <div className='h-screen w-full flex flex-wrap justify-around items-center bg-green-100 border border-gray-200 shadow-md'>
+      <div className='h-screen w-full flex flex-wrap justify-around items-center bg-[#ace2d1] border border-gray-200 shadow-md'>
         <Image 
           className='m-3 object-contain'
           src={'/images/home/choong-deng-xiang--WXQm_NTK0U-unsplash.jpg'} 
