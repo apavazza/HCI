@@ -16,7 +16,7 @@ const Page = () => {
           <span className="ml-10 block w-48 m-2 p-3 border bg-black text-white text-center hover:bg-green-800 active:bg-green-700">TRY IT FOR FREE</span>
         </div>
         <Image 
-          className='mr-10 object-contain' 
+          className='mx-10 object-contain' 
           src="/images/home/image-from-rawpixel-id-9975730-original.png" 
           alt="Hero Image" 
           width={400} 
