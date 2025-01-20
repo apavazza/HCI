@@ -2,11 +2,13 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Logo from "./logo";
 import { cn } from "@/lib/utils";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { TypeNavItem } from "@/content-types";
+import { authClient } from "@/lib/auth-client";
+import Button from "@/components/ui/button";
 
 // This is essentially the same as if we had written:
 //
@@ -86,6 +88,7 @@ type NavigationProps = {
 };
 
 export function Navigation({ pages }: NavigationProps) {
+  const router = useRouter();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
@@ -94,9 +97,11 @@ export function Navigation({ pages }: NavigationProps) {
 
   useClickOutside(navRef, closeMenu);
 
+  const { data: session, isPending } = authClient.useSession();
+
   return (
     <nav
-      className="py-8 border-b border-brand-stroke-weak sticky top-0 z-20 bg-brand-fill"
+      className="py-3 border-b border-brand-stroke-weak sticky top-0 z-20 bg-brand-fill"
       ref={navRef}
     >
       <div className="container flex justify-between items-center">
@@ -110,6 +115,31 @@ export function Navigation({ pages }: NavigationProps) {
             .filter((page) => page.includeInProd)
             .map((page, index) => processPage(page, index, pathname))}
         </ul>
+
+        {isPending ? (
+          <Button ghost iconClassName="hidden">
+            Loading...
+          </Button>
+        ) : session ? (
+          <div className="flex items-center gap-4">
+            <span className="text-sm font-bold">{session.user?.name}</span>
+            <Button
+              ghost
+              iconClassName="hidden"
+              onClick={() => authClient.signOut()}
+            >
+              Sign Out
+            </Button>
+          </div>
+        ) : (
+          <Button
+            ghost
+            iconClassName="hidden"
+            onClick={() => router.push("/signin")}
+          >
+            Sign In
+          </Button>
+        )}
 
         {/* Visible on mobile */}
         <Hamburger isOpen={isMenuOpen} toggleMenu={toggleMenu} />
