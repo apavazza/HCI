@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +36,7 @@ export default function SignIn() {
     }
   };
   return (
-    <div className="flex flex-1 items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-1 flex-col items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
@@ -109,6 +111,10 @@ export default function SignIn() {
             </button>
           </div>
         </form>
+      </div>
+      <div className="block text-center mt-4">
+        <p>Don&apos;t have an account yet?</p>
+        <Link href={'/signup'} className="text-brand-primary hover:text-green-900 active:text-green-950">Sign Up</Link>
       </div>
     </div>
   );

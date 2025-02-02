@@ -109,37 +109,37 @@ export function Navigation({ pages }: NavigationProps) {
           <Logo className="ml-5 text-2xl" />
         </Link>
 
-        {/* Hidden on mobile */}
-        <ul className="hidden md:flex justify-between space-x-4 text-sm uppercase text-brand-text-strong">
+        {/* Desktop navigation */}
+        <ul className="hidden md:flex justify-between items-center space-x-4 text-sm uppercase text-brand-text-strong">
           {pages
             .filter((page) => page.includeInProd)
             .map((page, index) => processPage(page, index, pathname))}
+            {isPending ? (
+              <Button ghost iconClassName="hidden">
+                Loading...
+              </Button>
+            ) : session ? (
+              <div className="flex items-center gap-4">
+                <span className="text-sm font-bold">{session.user?.name}</span>
+                <Button
+                  ghost
+                  iconClassName="hidden"
+                  onClick={() => authClient.signOut()}
+                >
+                  Sign Out
+                </Button>
+              </div>
+            ) : (
+              <Button
+                ghost
+                iconClassName="hidden"
+                onClick={() => router.push("/signin")}
+              >
+                Sign In
+              </Button>
+            )}
         </ul>
 
-        {isPending ? (
-          <Button ghost iconClassName="hidden">
-            Loading...
-          </Button>
-        ) : session ? (
-          <div className="flex items-center gap-4">
-            <span className="text-sm font-bold">{session.user?.name}</span>
-            <Button
-              ghost
-              iconClassName="hidden"
-              onClick={() => authClient.signOut()}
-            >
-              Sign Out
-            </Button>
-          </div>
-        ) : (
-          <Button
-            ghost
-            iconClassName="hidden"
-            onClick={() => router.push("/signin")}
-          >
-            Sign In
-          </Button>
-        )}
 
         {/* Visible on mobile */}
         <Hamburger isOpen={isMenuOpen} toggleMenu={toggleMenu} />
@@ -153,6 +153,30 @@ export function Navigation({ pages }: NavigationProps) {
             .filter((page) => page.includeInProd)
             .map((page, index) =>
               processPage(page, index, pathname, closeMenu)
+            )}
+            {isPending ? (
+              <Button ghost iconClassName="hidden">
+                Loading...
+              </Button>
+            ) : session ? (
+              <div className="flex items-center gap-4">
+                <span className="text-sm font-bold">{session.user?.name}</span>
+                <Button
+                  ghost
+                  iconClassName="hidden"
+                  onClick={() => authClient.signOut()}
+                >
+                  Sign Out
+                </Button>
+              </div>
+            ) : (
+              <Button
+                ghost
+                iconClassName="hidden"
+                onClick={() => router.push("/signin")}
+              >
+                Sign In
+              </Button>
             )}
         </ul>
       </div>

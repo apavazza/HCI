@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Page = () => {
 
@@ -13,7 +14,7 @@ const Page = () => {
         <div className='flex flex-col justify-center'>
           <h2 className="ml-7 pt-10 p-3 text-3xl">Human stories & ideas</h2>
           <span className="ml-7 p-3 text-xl">Unlock Your Voice With Professional Blogging Services</span>
-          <span className="ml-10 block w-48 m-2 p-3 border bg-black text-white text-center hover:bg-green-800 active:bg-green-700">TRY IT FOR FREE</span>
+          <Link href={'/signup'}><span className="ml-10 block w-48 m-2 p-3 border bg-black text-white text-center hover:bg-green-800 active:bg-green-700">TRY IT FOR FREE</span></Link>
         </div>
         <Image 
           className='mx-10 object-contain' 

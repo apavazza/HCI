@@ -33,7 +33,6 @@ export function Footer() {
             <li>Address 123</li>
             <li>+0 000 000</li>
             <li><a href="mailto:info@writewarp.example.com">info@writewarp.example.com</a></li>
-            <li className="mt-12"><a href="https://app.contentful.com" target="_blank">Dashboard</a></li>
           </ul>
         
       </div>
