@@ -14,7 +14,7 @@ export default async function ProfilePage() {
 
   if (!session) {
     return (
-      <main className="flex min-h-screen flex-col items-center py-14 space-y-14">
+      <main className="flex min-h-screen flex-col items-center py-14 space-y-14 bg-gray-50">
         <h1 className="text-6xl font-extrabold tracking-tight">Dashboard</h1>
         <p className="text-xl text-center text-brand-text-weak">
           You need to be logged in to view this page. Please sign in to
