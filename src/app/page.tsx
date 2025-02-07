@@ -1,75 +1,127 @@
-"use client"; // Add this at the top of the file to mark the component as a Client Component
+"use client"
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { useEffect, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight, ArrowDown, Palette, Globe, PenTool } from "lucide-react"
 
 const Page = () => {
+  const [showArrow, setShowArrow] = useState(true)
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowArrow(false)
+      } else {
+        setShowArrow(true)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToNextSection = () => {
+    const featuresSection = document.getElementById("features-section")
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center">
-      {/* HERO SECTION */}
-      <div className="h-screen flex flex-wrap justify-around bg-[#ace2d1] w-full border border-gray-200 shadow-md">
-        <div className='flex flex-col justify-center'>
-          <h2 className="ml-7 pt-10 p-3 text-3xl">Human stories & ideas</h2>
-          <span className="ml-7 p-3 text-xl">Unlock Your Voice With Professional Blogging Services</span>
-          <Link href={'/signup'}><span className="ml-10 block w-48 m-2 p-3 border bg-black text-white text-center hover:bg-green-800 active:bg-green-700">TRY IT FOR FREE</span></Link>
-        </div>
-        <Image 
-          className='mx-10 object-contain' 
-          src="/images/home/image-from-rawpixel-id-9975730-original.png" 
-          alt="Hero Image" 
-          width={400} 
-          height={50} 
-        />
-      </div>
-      {/* SECOND SECTION */}
-      <div className='h-screen w-full flex flex-wrap justify-around items-center bg-[#EBF2F4] border border-gray-200 shadow-md'>
-        <div className='flex flex-col justify-center'>
-          <h3 className='p-10 text-2xl'>Build your blog your way</h3>
-          <div>
-            <h4 className='ml-10 mb-5 p-1 text-xl'>Design a unique blog</h4>
-            <h4 className='ml-10 mb-5 p-1 text-xl'>Establish your site’s domain name</h4>
-            <h4 className='ml-10 mb-5 p-1 text-xl'>Create with content in mind</h4>
+      {/* Hero Section */}
+      <section className="relative w-full h-screen bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
+          <div className="lg:w-1/2 mb-10 lg:mb-0">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">Human stories & ideas</h1>
+            <p className="text-xl text-gray-700 mb-8">Unlock Your Voice With Professional Blogging Services</p>
+            <Link href="/signup">
+              <span className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition duration-150 ease-in-out">
+                TRY IT FOR FREE
+                <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
+              </span>
+            </Link>
+          </div>
+          <div className="lg:w-1/2">
+            <Image
+              src="/images/home/image-from-rawpixel-id-9975730-original.png"
+              alt="Hero Image"
+              width={600}
+              height={400}
+              //className="rounded-lg shadow-lg"
+            />
           </div>
         </div>
-        <Image 
-          className='m-3 object-contain'
-          src={'/images/home/carlos-muza-hpjSkU2UYSU-unsplash.jpg'} 
-          alt='About Image'
-          width={700} 
-          height={100}
-        />
-      </div>
+        <button
+          onClick={scrollToNextSection}
+          className={`absolute bottom-20 left-1/2 transform -translate-x-1/2 text-green-600 hover:text-green-700 transition-all duration-300 ease-in-out ${showArrow ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+          aria-label="Scroll to next section"
+        >
+          <ArrowDown className="h-12 w-12 animate-bounce" />
+        </button>
+      </section>
 
-      {/* THIRD SECTION */}
-      <div className='h-screen w-full flex flex-wrap justify-around items-center bg-[#ace2d1] border border-gray-200 shadow-md'>
-        <Image 
-          className='m-3 object-contain'
-          src={'/images/home/choong-deng-xiang--WXQm_NTK0U-unsplash.jpg'} 
-          alt='About Image'
-          width={500} 
-          height={100}
-        />
-        <div>
-          <h2 className='p-5 text-2xl'>Get started with a free blog</h2>
-          <div className='flex justify-around'>
-            <div className='flex flex-col justify-center'>
-              <h3 className='p-5 text-xl'>Start your blog today</h3>
-              <span className='p-5'>Get your blog up and running in minutes</span>
-              <span className='p-5'>Choose from a wide selection of templates</span>
-              <span className='p-5'>Customize your blog’s design and layout</span>
-              <span className='p-5'>Connect your domain or get a new one</span>
-              <span className='p-5'>Start writing your blog posts</span>
-            </div>
+      {/* Features Section */}
+      <section id="features-section" className="w-full bg-white py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Build your blog your way</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: Palette, title: "Design a unique blog" },
+              { icon: Globe, title: "Establish your site's domain name" },
+              { icon: PenTool, title: "Create with content in mind" },
+            ].map((feature, index) => (
+              <div key={index} className="flex flex-col items-center text-center">
+                <feature.icon className="h-12 w-12 text-green-500 mb-4" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      
+      {/* About Section */}
+      <section className="w-full bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
+          <div className="lg:w-1/2 mb-10 lg:mb-0">
+            <Image
+              src="/images/home/carlos-muza-hpjSkU2UYSU-unsplash.jpg"
+              alt="About Image"
+              width={600}
+              height={400}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="lg:w-1/2 lg:pl-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Get started with a free blog</h2>
+            <ul className="space-y-4">
+              {[
+                "Get your blog up and running in minutes",
+                "Choose from a wide selection of templates",
+                "Customize your blog's design and layout",
+                "Connect your domain or get a new one",
+                "Start writing your blog posts",
+              ].map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <ArrowRight className="h-6 w-6 text-green-500 mr-2 flex-shrink-0" />
+                  <span className="text-gray-600">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <Link href="/signup">
+              <span className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition duration-150 ease-in-out mt-8">
+                Start your blog today
+                <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page
+
