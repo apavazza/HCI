@@ -34,8 +34,8 @@ const Page = () => {
       <section className="relative w-full h-screen bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 mb-10 lg:mb-0">
-            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">Human stories & ideas</h1>
-            <p className="text-xl text-gray-700 mb-8">Unlock Your Voice With Professional Blogging Services</p>
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">Share Your Story <br /> With The World</h1>
+            <p className="text-xl text-gray-700 mb-8"><span className="text-green-800 font-bold">Blogging service</span> made simple</p>
             <Link href="/signup">
               <span className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition duration-150 ease-in-out">
                 TRY IT FOR FREE
