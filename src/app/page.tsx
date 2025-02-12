@@ -45,11 +45,11 @@ const Page = () => {
           </div>
           <div className="lg:w-1/2">
             <Image
-              src="/images/home/image-from-rawpixel-id-9975730-original.png"
+              src="/images/home/lauren-mancke-aOC7TSLb1o8-unsplash.jpg"
               alt="Hero Image"
               width={600}
               height={400}
-              //className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg"
             />
           </div>
         </div>
@@ -68,14 +68,14 @@ const Page = () => {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Build your blog your way</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: Palette, title: "Design a unique blog" },
-              { icon: Globe, title: "Establish your site's domain name" },
-              { icon: PenTool, title: "Create with content in mind" },
+              { icon: Palette, title: "Design a unique blog", subtitle: "Stand out with a layout that captures your brand's personality" },
+              { icon: Globe, title: "Establish your site's domain name", subtitle: "Create a strong online identity with a memorable domain" },
+              { icon: PenTool, title: "Create with content in mind", subtitle: "Focus on delivering value and quality to engage your readers" },
             ].map((feature, index) => (
               <div key={index} className="flex flex-col items-center text-center">
                 <feature.icon className="h-12 w-12 text-green-500 mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-gray-600">{feature.subtitle}</p>
               </div>
             ))}
           </div>
