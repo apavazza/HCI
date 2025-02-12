@@ -8,6 +8,7 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 type PostCardProps = {
   props: {
     title: string
+    shortDescription: string
     author: string
     thumbnail: any
     text: string
@@ -49,7 +50,7 @@ export default function PostCard({ props }: PostCardProps) {
         </Link>
 
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{props.title}</h1>
-
+        <h2 className="text-lg sm:text-xl text-gray-600 mb-4 leading-relaxed">{props.shortDescription}</h2>
         <div className="flex items-center text-sm text-gray-500 mb-6">
           <div className="flex items-center mr-6">
             <User className="w-4 h-4 mr-2" />
