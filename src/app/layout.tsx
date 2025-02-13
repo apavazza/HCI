@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { getMainNavigation } from "@/lib/api";
+import CookieNotice from "@/components/CookieNotice";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default async function RootLayout({
         <Navigation pages={pages} />
         {children}
         <Footer />
+        <CookieNotice />
       </body>
     </html>
   );
