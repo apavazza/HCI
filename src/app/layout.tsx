@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | writewarp",
     default: "writewarp",
   },
-  description: "Unlock Your Voice With Professional Blogging Services",
+  description: "Blogging service made simple",
 };
 
 export default async function RootLayout({

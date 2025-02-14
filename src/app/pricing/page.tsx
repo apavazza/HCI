@@ -1,5 +1,10 @@
+import { Metadata } from "next"
 import Link from "next/link"
 import { Check, X } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Pricing",
+}
 
 export default function Pricing() {
   const plans = [

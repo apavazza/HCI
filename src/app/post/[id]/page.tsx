@@ -2,7 +2,7 @@
 
 import getPostById from '@/lib/getPostById';
 import { useEffect, useState } from 'react';
-import PostCard from '@/components/postCard';
+import PostCard from './_components/postCard';
 
 type BlogPostProps = {
   params: { id: string };
