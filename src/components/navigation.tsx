@@ -38,7 +38,7 @@ function MobileNavLink({ page, pathname, onClick }: { page: Page; pathname: stri
       href={page.path}
       onClick={onClick}
       className={cn(
-        "block py-2 px-4 text-base font-medium rounded-md transition-all duration-200 ease-in-out text-right",
+        "block py-2 px-4 text-base font-medium rounded-md transition-all duration-200 ease-in-out",
         isActive
           ? "bg-brand-primary text-white shadow-md"
           : "text-gray-700 hover:bg-brand-primary/10 hover:text-brand-primary",
@@ -101,13 +101,12 @@ export function Navigation({ pages }: NavigationProps) {
                   <span>{session.user?.name}</span>
                   <ChevronDown className="h-4 w-4" />
                 </button>
-                <div className="absolute right-0 w-48 mt-2 py-2 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
+                <div className="absolute right-0 mt-2 py-2 bg-white border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
                   <Button
                     ghost
                     onClick={() => authClient.signOut()}
                     className="flex items-center w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-brand-primary hover:text-white transition-all duration-200 ease-in-out"
                   >
-                    <LogOut className="h-4 w-4 mr-2" />
                     Sign Out
                   </Button>
                 </div>
@@ -140,6 +139,7 @@ export function Navigation({ pages }: NavigationProps) {
         </div>
       </div>
 
+      {/* Mobile menu */}
       <div
         className={cn(
           "md:hidden absolute top-full left-0 w-full bg-white shadow-md transition-all duration-200 ease-in-out",
@@ -156,27 +156,26 @@ export function Navigation({ pages }: NavigationProps) {
         <div className="pt-4 pb-3 border-t border-gray-200">
           <div className="px-2 space-y-1">
             {isPending ? (
-              <div className="text-right">
+              <div>
                 <Button ghost iconClassName="hidden" className="inline-block">
                   Loading...
                 </Button>
               </div>
             ) : session ? (
               <>
-                <p className="block px-4 py-2 text-base font-medium text-gray-700 text-right">{session.user?.name}</p>
-                <div className="text-right">
+                <p className="block px-4 py-2 text-base font-medium text-gray-700">{session.user?.name}</p>
+                <div>
                   <Button
                     ghost
                     onClick={() => authClient.signOut()}
                     className="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 hover:bg-brand-primary hover:text-white transition-all duration-200 ease-in-out"
                   >
                     Sign Out
-                    <LogOut className="h-5 w-5 ml-2" />
                   </Button>
                 </div>
               </>
             ) : (
-              <div className="text-right">
+              <div>
                 <Button
                   ghost
                   iconClassName="hidden"
@@ -193,4 +192,3 @@ export function Navigation({ pages }: NavigationProps) {
     </nav>
   )
 }
-
