@@ -1,5 +1,4 @@
-<details>
-  <summary>Basic Design Principles</summary>
+## Basic Design Principles
 Throughout our project, we applied several basic design principles to enhance user experience and interface design:
 
 1. **Consistency**: We maintained a consistent color scheme, typography, and button styles across all pages (sign-in, sign-up, profile, navigation).
@@ -11,10 +10,9 @@ Throughout our project, we applied several basic design principles to enhance us
 4. **Alignment**: Form elements, buttons, and text were carefully aligned to create a clean, organized layout.
 
 5. **Proximity**: Related elements were grouped together, such as form fields and their labels.
-</details>
 
-<details>
-    <summary>Norman's 7 Strategies</summary>
+
+## Norman's 7 Strategies
 We incorporated Donald Norman's 7 principles of design in the following ways:
 
 1. **Discoverability**: Navigation items and form inputs were clearly visible and labeled.
@@ -30,10 +28,9 @@ We incorporated Donald Norman's 7 principles of design in the following ways:
 6. **Mappings**: The logical order of form fields (e.g., name, email, password) mapped to users' mental models of account creation.
 
 7. **Constraints**: Required fields were marked to constrain user actions and prevent errors.
-</details>
 
-<details>
-    <summary>Heuristic Evaluation</summary>
+
+## Heuristic Evaluation
 Applying Nielsen's heuristics, we can evaluate our design as follows:
 
 1. **Visibility of System Status**: The active page is highlighted in the navigation.
@@ -55,10 +52,9 @@ Applying Nielsen's heuristics, we can evaluate our design as follows:
 9. **Help Users Recognize, Diagnose, and Recover from Errors**
 
 10. **Help and Documentation**
-</details>
 
-<details>
-    <summary>C.R.A.P. Principles</summary>
+
+## C.R.A.P. Principles
 We applied the C.R.A.P. (Contrast, Repetition, Alignment, Proximity) principles as follows:
 
 1. **Contrast**: 
@@ -77,10 +73,9 @@ We applied the C.R.A.P. (Contrast, Repetition, Alignment, Proximity) principles 
    - Grouped related form fields together
    - Placed submit buttons near the bottom of the forms
    - Kept navigation items close together in the header
-</details>
 
-<details>
-    <summary>Areas for Improvement</summary>
+
+## Areas for Improvement
 While we've applied many design principles effectively, there are areas where we can enhance our application:
 
 1. Implement more robust error handling and feedback mechanisms
@@ -90,4 +85,3 @@ While we've applied many design principles effectively, there are areas where we
 5. Add more micro-interactions to improve user engagement
 
 By addressing these areas, we can further improve the user experience and adhere more closely to established design principles and heuristics.
-</details>
