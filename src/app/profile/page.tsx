@@ -7,6 +7,7 @@ import BarChart from "./_components/barChart"
 import StatCard from "./_components/statCard"
 import RecentPosts from "./_components/recentPosts"
 import { User, BarChart2, TrendingUp, Users } from "lucide-react"
+import { redirect } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -18,6 +19,7 @@ export default async function ProfilePage() {
   })
 
   if (!session) {
+    redirect("/signin")
     return (
       <main className="flex min-h-screen flex-col items-center justify-center py-14 space-y-8 bg-gray-50">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900">Dashboard</h1>

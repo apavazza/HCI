@@ -1,12 +1,23 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import SignUpForm from "./_components/signUpForm"
+import { headers } from "next/headers"
+import { redirect } from "next/navigation"
+import { auth } from "@/lib/auth"
 
 export const metadata: Metadata = {
   title: "Sign Up",
 }
 
-export default function SignUp() {
+export default async function SignUp() {
+  const session = await auth.api.getSession({
+        headers: headers(),
+      })
+    
+      if (session) {
+        redirect("/profile")
+      }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg w-full max-w-md">
