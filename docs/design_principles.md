@@ -50,6 +50,9 @@ Applying Nielsen's heuristics, we can evaluate our design as follows:
 8. **Aesthetic and Minimalist Design**: We kept the design clean and focused on essential elements.
 
 9. **Help Users Recognize, Diagnose, and Recover from Errors**
+   - Error messages are clear and provide guidance on how to correct the issue.
+   - Form validation highlights specific fields that need attention.
+   - Users are given suggestions to resolve common issues.
 
 10. **Help and Documentation**
 

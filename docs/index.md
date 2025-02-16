@@ -1,5 +1,11 @@
 # WriteWarp
 
+<details>
+<summary>Introduction</summary>
+Blogging is a great way for people to share their ideas and experiences, but many platforms can be too complicated or overwhelming. This report introduces a blogging service designed to make it easy for anyone, from aspiring writers to hobbyists, to create and share content. By focusing on user-friendly tools, customizable templates, and community interaction, our platform helps users stay focused on writing without getting bogged down by technical details. Whether you're just starting or looking to grow your online presence, this service is built to support your goals and make blogging enjoyable.
+</details>
+
+
 1. [User personas](personas.md)
 1. [Sitemap](sitemap.md)
 1. [Low-fidelity models](lofi.md)

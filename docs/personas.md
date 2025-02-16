@@ -120,6 +120,48 @@ Carlos has a clean-cut, professional look, often seen in a crisp button-down shi
 
 Emily has a warm, friendly appearance, often seen in casual, comfortable clothing suited for her DIY and gardening activities. She has medium-length dark hair with a few silver strands and a relaxed expression that shows her calm and nurturing personality.
 
+
+## Persona 4: Robert Thompson - "The Retired Enthusiast"
+
+![Photo of Persona 4](./assets/persona4.png)
+
+### Bio:
+
+- **Age:** 70
+- **Occupation:** Retired Engineer
+- **Location:** San Francisco, CA
+- **Tech Savvy Level:** Low to Moderate
+- **Writing Frequency:** Monthly, sharing life experiences, travel stories, and technical insights
+
+### Goals:
+
+- Document and share his life experiences and travel stories with family and friends
+- Stay mentally active and engaged through writing
+- Connect with a community of like-minded individuals and share technical insights from his career
+
+### Frustrations:
+
+- Finds modern blogging platforms overwhelming and difficult to navigate
+- Prefers straightforward, no-frills tools without unnecessary features
+- Needs larger text and simple interfaces due to age-related vision changes
+
+### Motivations:
+
+- Prefers a platform that is easy to use and visually accessible
+- Enjoys sharing his knowledge and experiences with a supportive community
+- Values a platform that offers simple customization options without being overwhelming
+
+### Key Features Needed:
+
+- Large text options and high-contrast themes for better readability
+- Simple, intuitive interface with minimal steps to publish content
+- Community forums or groups for connecting with others who share his interests
+
+### Visual Description:
+
+Robert has a distinguished appearance with short, silver hair and a neatly trimmed beard. He often wears casual, comfortable clothing like sweaters and slacks. His expression is thoughtful and kind, reflecting his years of experience and wisdom.
+
+
 ## ChatGPT prompts used
 
 - "Create a set of user personas (3) relevant to a specific project, in this case creating a blogging platform. Include visual descriptions for your personas."
