@@ -10,10 +10,10 @@ type PostCardProps = {
     title: string
     shortDescription: string
     author: string
-    thumbnail: any
+    thumbnail: string
     text: string
     id: string
-    postContent: any
+    postContent: string
     timePublished: string
   }
 }

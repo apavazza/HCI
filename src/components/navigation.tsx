@@ -9,7 +9,7 @@ import { useClickOutside } from "@/hooks/useClickOutside"
 import type { TypeNavItem } from "@/content-types"
 import { authClient } from "@/lib/auth-client"
 import Button from "@/components/ui/button"
-import { Menu, X, ChevronDown, LogOut } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 
 type Page = TypeNavItem<"WITHOUT_UNRESOLVABLE_LINKS">["fields"]
 

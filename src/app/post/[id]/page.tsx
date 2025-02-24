@@ -9,26 +9,25 @@ type BlogPostProps = {
 };
 
 
-const PostPage = ({params}) => {
+const PostPage = ({params}: BlogPostProps) => {
   const [post, setPost] = useState([]);
 
-  const fetchPost = async () => {
-    try {
-      const fetchedPost = await getPostById(params.id);
-      setPost(fetchedPost);
-    } catch (error) {
-      console.error('Error fetching post:', error);
-    }
-  };
-
+  
   useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const fetchedPost = await getPostById(params.id);
+        setPost(fetchedPost);
+      } catch (error) {
+        console.error('Error fetching post:', error);
+      }
+    };
     fetchPost();
-  }, []);
+  }, [params.id]);
 
 
   return (
     <div>
-      {/* <PostCard title={post.title} author={post.author} thumbnail={post.thumbnail} text={post.shortDescription || 'No description available'} /> */}
       <PostCard props={post} />
     </div>
   );

@@ -1,5 +1,5 @@
 import contentfulClient from "./contentfulClient";
-import { unstable_cache } from 'next/cache';
+//import { unstable_cache } from 'next/cache';
 
 // const getPosts = unstable_cache(async () => {
 //   const data = await contentfulClient.withoutUnresolvableLinks.getEntries({

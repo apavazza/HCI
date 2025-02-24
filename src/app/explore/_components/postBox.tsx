@@ -8,7 +8,7 @@ type PostBoxProps = {
   props: {
     id: string
     title: string
-    thumbnail: any
+    thumbnail: string
     shortDescription: string
     author: string
     timePublished: string
