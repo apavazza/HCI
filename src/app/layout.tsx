@@ -26,6 +26,10 @@ export const metadata: Metadata = {
     default: "writewarp",
   },
   description: "Blogging service made simple",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default async function RootLayout({
